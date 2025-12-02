@@ -1,0 +1,60 @@
+body {
+    background-image: url('./background_image.webp');
+    margin: 0;
+    color: #fffaf4;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+nav {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    position: relative;
+}
+
+#overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    z-index: 1;
+    background: rgba(0, 0, 0, .4);
+    margin: 0;
+    padding: 16px;
+}
+
+#nav-items {
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+}
+
+#nav-items a {
+    text-decoration: none;
+    color: white;
+    padding: 0 8px;
+    font-size: x-large;
+}
+
+#nav-items a:hover {
+    color: #1b668b;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+

@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spellbound Trails - Travel Recommendation Site</title>
+    <title>Spellbound Trails - About Us</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <div id="overlay">
         <nav>
-            <img src="./logo.jpg" width="100" height="100" id="logo">
+            <figure>
+                <img src="./logo.jpg" width="100" height="100" id="logo">
+            </figure>
             <div id="nav-items">
                 <a href="./travelRecommendation.html">Home</a>
                 <a href="./about_us.html">About Us</a>
@@ -22,9 +24,21 @@
             </div>
         </nav>
         <div id="container">
-            <h1>Follow Hidden Paths — Find Your Next Story</h1>
-            <h3>Curated routes, secret spots, and cultural experiences inspired by the stories you love. Pack less planning — more discovery.</h3>
-            <p>Travel isn&apos;t just photos — it&apos;s the quiet shopkeeper who tells you a town&apos;s story, the street you turn down by chance, and the meal that teaches you a new word. We connect you with local guides, tucked-away cultural experiences, and itineraries that let you learn, taste, and belong for a day — not just visit.</p>
+            <div id="contactus-description">
+                <p>
+                    Have a question, partnership idea, or a secret spot to recommend? Drop us a line at spellboundtrails@gmail.com and we&apos;ll reply within one business day.
+                </p>
+            </div>
+            <form>
+                <fieldset>
+                    <legend>Contact Team at Spellbound Trails</legend>
+                    <label for="name">Your Name:</label>
+                    <input type="text" name="name" id="name">
+                    <label for="message">Your Message:</label>
+                    <input type="text" name="message" id="message">
+                    <button id="contactus-form-submit">Send</button>
+                </fieldset>
+            </form>
         </div>
         <footer>
             <a href="">
