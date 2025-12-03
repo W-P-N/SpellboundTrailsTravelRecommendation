@@ -59,9 +59,19 @@ main {
 
 #container {
     display: flex;
+    padding: 0 2rem;
+    flex: 1;
+}
+ 
+#container #left-container {
+    display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0 2rem;
+}
+
+#container #right-container {
+    flex: 1;
 }
 
 footer {

@@ -79,7 +79,6 @@
                     resultHtml = `<p>No data found</p>`;
                 };
                 // console.log(resultHtml);  // Debug log
-                // Get serchQuery from data
                 // Display on screen
             })
             .catch(err => {
