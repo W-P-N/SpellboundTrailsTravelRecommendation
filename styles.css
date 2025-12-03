@@ -10,7 +10,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     margin: 0;
-    padding: 0 2rem;
+    background-color: rgba(0, 0, 0, .5);
+    padding: 0 16px;
 }
 
 #logo {
@@ -27,7 +28,6 @@ nav {
     z-index: 1;
     background: rgba(0, 0, 0, .5);
     margin: 0;
-    padding: 16px;
 }
 
 main {
@@ -43,7 +43,7 @@ main {
     flex-direction: row;
     justify-content: space-between;
     gap: 4rem;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
 }
 

@@ -6,12 +6,12 @@
         "cities": [
             {
             "name": "Sydney, Australia",
-            "imageUrl": "enter_your_image_for_sydney.jpg",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg/330px-Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg",
             "description": "A vibrant city known for its iconic landmarks like the Sydney Opera House and Sydney Harbour Bridge."
             },
             {
             "name": "Melbourne, Australia",
-            "imageUrl": "enter_your_image_for_melbourne.jpg",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Melburnian_Skyline_b.jpg/330px-Melburnian_Skyline_b.jpg",
             "description": "A cultural hub famous for its art, food, and diverse neighborhoods."
             }
         ]
@@ -22,12 +22,12 @@
         "cities": [
             {
             "name": "Tokyo, Japan",
-            "imageUrl": "enter_your_image_for_tokyo.jpg",
+            "imageUrl": "https://media.istockphoto.com/id/904453184/photo/composite-image-of-mt-fuji-and-tokyo-skyline.jpg?s=612x612&w=0&k=20&c=EAJrI5nVsDuIkiv7o3NY1LsaZHRCcOWUOvk2g9FfFD0=",
             "description": "A bustling metropolis blending tradition and modernity, famous for its cherry blossoms and rich culture."
             },
             {
             "name": "Kyoto, Japan",
-            "imageUrl": "enter_your_image_for_kyoto.jpg",
+            "imageUrl": "https://images.squarespace-cdn.com/content/v1/6170a7fb9cfbe613f5de8eb7/1a28150c-e38b-412c-ac86-9f25e7d17293/kyoto-header.jpg",
             "description": "Known for its historic temples, gardens, and traditional tea houses."
             }
         ]
@@ -38,12 +38,12 @@
         "cities": [
             {
             "name": "Rio de Janeiro, Brazil",
-            "imageUrl": "enter_your_image_for_rio.jpg",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Cidade_Maravilhosa.jpg/330px-Cidade_Maravilhosa.jpg",
             "description": "A lively city known for its stunning beaches, vibrant carnival celebrations, and iconic landmarks."
             },
             {
             "name": "São Paulo, Brazil",
-            "imageUrl": "enter_your_image_for_sao-paulo.jpg",
+            "imageUrl": "https://lp-cms-production.imgix.net/2025-09/shutterstock2492777801.jpg?auto=compress&format=auto&fit=crop&q=50&w=1200&h=800",
             "description": "The financial hub with diverse culture, arts, and a vibrant nightlife."
             }
         ]
@@ -53,13 +53,13 @@
         {
         "id": 1,
         "name": "Angkor Wat, Cambodia",
-        "imageUrl": "enter_your_image_for_angkor-wat.jpg",
+        "imageUrl": "https://images.prismic.io/travelfika/Z9q3QjiBA97GipbA_AngkorWatTemple.jpg?auto=format,compress",
         "description": "A UNESCO World Heritage site and the largest religious monument in the world."
         },
         {
         "id": 2,
         "name": "Taj Mahal, India",
-        "imageUrl": "enter_your_image_for_taj-mahal.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/1200px-Taj_Mahal_%28Edited%29.jpeg",
         "description": "An iconic symbol of love and a masterpiece of Mughal architecture."
         }
     ],
@@ -67,13 +67,13 @@
         {
         "id": 1,
         "name": "Bora Bora, French Polynesia",
-        "imageUrl": "enter_your_image_for_bora-bora.jpg",
+        "imageUrl": "https://cdn.britannica.com/16/60016-050-5D8447C8/peaks-Bora-Bora-Society-Islands-lagoon-French-Polynesia.jpg",
         "description": "An island known for its stunning turquoise waters and luxurious overwater bungalows."
         },
         {
         "id": 2,
         "name": "Copacabana Beach, Brazil",
-        "imageUrl": "enter_your_image_for_copacabana.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/Praia_de_Copacabana_-_Rio_de_Janeiro%2C_Brasil.jpg",
         "description": "A famous beach in Rio de Janeiro, Brazil, with a vibrant atmosphere and scenic views."
         }
     ]
