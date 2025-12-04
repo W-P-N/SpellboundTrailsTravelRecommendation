@@ -10,7 +10,7 @@
 
     // Function to fetch data
     async function fetchData() {
-        return fetch('./travel_recommendation_api.json')
+        return fetch('./data/travel_recommendation_api.json')
             .then(response => {
                 if(!response.ok) {
                     throw new Error('Network Response not okay');
