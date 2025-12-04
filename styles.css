@@ -77,7 +77,7 @@ main {
     font-size: 16px;
 }
 
-#search-button, #reset-search-button {
+#search-button, #clear-search-button {
     text-decoration: none;
     margin: 4px;
     background-color: #2491c7;
@@ -89,7 +89,7 @@ main {
     text-align: center;
 }
 
-#search-button:hover, #reset-search-button:hover {
+#search-button:hover, #clear-search-button:hover {
     background-color: #64abce;
 }
 
@@ -240,7 +240,7 @@ footer a:hover {
     background-color: #3597c9;
 }
 
-#resultContainer {
+#result-container {
     position: absolute;
     top: 100px;
     right: 40px;
@@ -248,7 +248,7 @@ footer a:hover {
     width: 30%;
 }
 
-#searchResult {
+.search-result {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -260,38 +260,38 @@ footer a:hover {
     margin: 8px 4px;
 }
 
-#searchResult:hover {
+.search-result:hover {
     box-shadow: -5px -2px 5px white;
     background-color: #3597c9;
 }
 
-#searchResult figure {
+.search-result figure {
     margin: 0;
     border-bottom: #fffaf4 solid 2px;
     height: 100%;
     width: 100%;
 }
 
-#searchResult figure img{
+.search-result figure img{
     margin: 0;
     padding: 0;
 }
 
-#searchResult h2 {
+.search-result h2 {
     margin: 4px;
 }
 
-#searchResult h3 {
+.search-result h3 {
     margin: 4px;
 }
 
-#searchResult p {
+.search-result p {
     text-align: center;
     margin: 0;
     padding: 16px 8px;
 }
 
-#searchResult a {
+.search-result a {
     text-decoration: none;
     margin: 4px;
     background-color: #2491c7;
@@ -303,7 +303,7 @@ footer a:hover {
     text-align: center;
 }
 
-#searchResult a:hover {
+.search-result a:hover {
     box-shadow: -2px 2px 10px black;
     background-color: #3597c9;
 }

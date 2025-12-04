@@ -2,106 +2,95 @@
     // Get Elements:
     const searchBar = document.getElementById('search-bar');
     const searchButton = document.getElementById('search-button');
-    const resetButton = document.getElementById('reset-search-button');
-    const resultContainer = document.getElementById('resultContainer');
+    const clearButton = document.getElementById('clear-search-button');
 
     // Event Listeners
-    searchButton.addEventListener('click', searchData);
-    resetButton.addEventListener('click', resetSearch);
+    searchButton.addEventListener('click', handleSearch);
+    clearButton.addEventListener('click', handleClear);
 
-    // Function to search the given keyword from the json file
-    function searchData () {
-        const searchQuery = searchBar.value.toLowerCase();
-        // console.log(searchQuery);  // Debug log
-        resultContainer.replaceChildren('');
-        if(searchQuery === '') {
-            return;
-        };
-        let resultHtml = '';
-        fetch('./travel_recommendation_api.json')
-            .then(async resp => {
-                const data = await resp.json();
-                // Search Match
-                let keySearchResult;
-                Object.keys(data).forEach(key => {
-                    if(key.includes(searchQuery)) {
-                        keySearchResult = key;
-                    };
-                });
-                // console.log(keySearchResult);  // Debug log
-                if(keySearchResult) {
-                    const placeQuery = data[keySearchResult];
-                    // console.log(placeQuery)  // Debug log
-                    switch (keySearchResult) {
-                        case 'countries':
-                            for(const country of placeQuery) {
-                                resultHtml += `
-                                    <div id="searchResult">
-                                        <figure>
-                                            <img src="${country.cities[0].imageUrl}" width ="100%">
-                                        </figure>
-                                        <h2>${country.name}</h2>
-                                        <h3>${country.cities[0].name}</h3>
-                                        <p>${country.cities[0].description}</p>
-                                        <a href="${country.imageUrl}">Visit</a>
-                                    </div>
-                                `;
-                            };
-                            break;
-                        
-                        case 'temples':
-                            for(const temple of placeQuery) {
-                                resultHtml += `
-                                    <div id="searchResult">
-                                        <figure>
-                                            <img src="${temple.imageUrl}" width="100%">
-                                        </figure>
-                                        <h2>${temple.name}</h2>
-                                        <p>${temple.description}</p>
-                                        <a href="${temple.imageUrl}">Visit</a>
-                                    </div>
-                                `;
-                            };
-                            break;
-                        case 'beaches':
-                            for(const beach of placeQuery) {
-                                resultHtml += `
-                                    <div id="searchResult">
-                                        <figure>
-                                            <img src="${beach.imageUrl}" width ="100%">
-                                        </figure>
-                                        <h2>${beach.name}</h2>
-                                        <p>${beach.description}</p>
-                                        <a href="${beach.imageUrl}">Visit</a>
-                                    </div>
-                                `;
-                            };
-                            break;
-                        default:
-                            break;
-                    };
-                } else {
-                    resultHtml = `<p>No data found</p>`;
+    // Function to fetch data
+    async function fetchData() {
+        return fetch('./travel_recommendation_api.json')
+            .then(response => {
+                if(!response.ok) {
+                    throw new Error('Network Response not okay');
                 };
-                // console.log(resultHtml);  // Debug log
-                // Display on screen
-                displayTheResult(resultHtml);
-                // resetSearch();
+                return response.json();
             })
-            .catch(err => {
-                console.error('Error fetching data');
-            });
-        
-    };
-    // Function to reset search space
-    function resetSearch() {
-        searchBar.value = "";
-        resultContainer.replaceChildren('');
+            .catch(error => {
+                console.error('Error fetching data: ',error);
+                throw error;
+            })
     };
 
-    function displayTheResult(result) {
-        resultContainer.replaceChildren('');
-        resultContainer.innerHTML += result;
+    // Function to filter results
+    function filterResults(data, query) {
+        if(!query) {
+            return [];
+        };
+
+        const lowerCaseQuery = query.toLowerCase();
+        // console.log(query);  // Debug log - OK
+        // console.log(data);  // Debug log - OK
+        let results = [];
+
+        if (lowerCaseQuery === 'country' || lowerCaseQuery === 'countries') {
+            results = data.countries.flatMap(country => country.cities.map(city => ({...city, type: 'Country'})));
+        } else if (lowerCaseQuery === 'temple' || lowerCaseQuery === 'temples') {
+            results = data.temples.map(temple => ({...temple, type: 'Temple'}));
+        } else if (lowerCaseQuery === 'beach' || lowerCaseQuery === 'beaches') {
+            results = data.beaches.map(beach => ({...beach, type: 'Beach'}));
+        };
+
+        return results;
     };
+
+    // Function to display the search results
+    function displayResults(results) {
+        const resultContainer = document.getElementById('result-container');
+        resultContainer.innerHTML = '';
+
+        if(results.length === 0) {
+            return resultContainer.innerHTML = '<p>No results found.</p>';   
+        };
+
+        results.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'search-result';
+
+            card.innerHTML = `
+                <figure>
+                    <img src="${item.imageUrl}" width="100%" alt="${item.name}">
+                </figure>
+                <h2>${item.name}</h2>
+                <p>${item.description}</p>
+                <a href='#'>Visit</a>
+            `;
+
+            resultContainer.appendChild(card);
+        });
+
+    };
+
+    // Function to reset search space
+    function handleClear() {
+        const serchBar = document.getElementById('search-bar');
+        searchBar.value = "";
+        displayResults([]);
+    };
+
+    async function handleSearch() {
+        const searchBar = document.getElementById('search-bar');
+        const query = searchBar.value;
+
+        try {
+            const data = await fetchData();
+            const results = filterResults(data, query);
+            displayResults(results);
+        } catch(error) {
+            const resultContainer = document.getElementById('result-container');
+            resultContainer.innerHTML = '<p>Could not retrieve the data. Please try again later.</p>'
+        }
+    }
 
 }) ();
