@@ -3,6 +3,7 @@
     const searchBar = document.getElementById('search-bar');
     const searchButton = document.getElementById('search-button');
     const resetButton = document.getElementById('reset-search-button');
+    const resultContainer = document.getElementById('resultContainer');
 
     // Event Listeners
     searchButton.addEventListener('click', searchData);
@@ -12,6 +13,7 @@
     function searchData () {
         const searchQuery = searchBar.value.toLowerCase();
         // console.log(searchQuery);  // Debug log
+        resultContainer.replaceChildren('');
         if(searchQuery === '') {
             return;
         };
@@ -36,11 +38,12 @@
                                 resultHtml += `
                                     <div id="searchResult">
                                         <figure>
-                                            <img src="${country.cities[0].imageUrl}" height="100px">
+                                            <img src="${country.cities[0].imageUrl}" width ="100%">
                                         </figure>
                                         <h2>${country.name}</h2>
                                         <h3>${country.cities[0].name}</h3>
                                         <p>${country.cities[0].description}</p>
+                                        <a href="${country.imageUrl}">Visit</a>
                                     </div>
                                 `;
                             };
@@ -51,10 +54,11 @@
                                 resultHtml += `
                                     <div id="searchResult">
                                         <figure>
-                                            <img src="${temple.imageUrl}" height="100px">
+                                            <img src="${temple.imageUrl}" width="100%">
                                         </figure>
                                         <h2>${temple.name}</h2>
                                         <p>${temple.description}</p>
+                                        <a href="${temple.imageUrl}">Visit</a>
                                     </div>
                                 `;
                             };
@@ -64,10 +68,11 @@
                                 resultHtml += `
                                     <div id="searchResult">
                                         <figure>
-                                            <img src="${beach.imageUrl}" height="100px">
+                                            <img src="${beach.imageUrl}" width ="100%">
                                         </figure>
                                         <h2>${beach.name}</h2>
                                         <p>${beach.description}</p>
+                                        <a href="${beach.imageUrl}">Visit</a>
                                     </div>
                                 `;
                             };
@@ -80,13 +85,23 @@
                 };
                 // console.log(resultHtml);  // Debug log
                 // Display on screen
+                displayTheResult(resultHtml);
+                // resetSearch();
             })
             .catch(err => {
                 console.error('Error fetching data');
             });
+        
     };
     // Function to reset search space
     function resetSearch() {
         searchBar.value = "";
+        resultContainer.replaceChildren('');
     };
+
+    function displayTheResult(result) {
+        resultContainer.replaceChildren('');
+        resultContainer.innerHTML += result;
+    };
+
 }) ();
