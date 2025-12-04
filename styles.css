@@ -141,29 +141,29 @@ main {
     font-size: 24px;
 }
 
-#team-member {
+.team-member {
     margin: 16px 0;
     padding: 4px 16px;
     background-color: #1b668b;
     border-radius: 8px;
 }
 
-#team-member:hover {
+.team-member:hover {
     background-color: #3597c9;
 }
 
-#team-member-name {
+.team-member-name {
     font-size: large;
     font-weight: bold;
 }
 
-#team-member-position {
+.team-member-position {
     margin: 0;
     padding: 4px 0;
     font-size: 14px;
 }
 
-#team-member-position span {
+.team-member-position span {
     padding: 0 4px;
     font-weight: bolder;
 }
